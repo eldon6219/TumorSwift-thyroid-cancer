@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css reset  -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Secular+One&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Secular+One&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inder&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inder&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inder&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inder&family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Secular+One&display=swap"
+        rel="stylesheet">
+
+        <style>
+            * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+:root {
+    --main-color: #705AEB;
+    --link-color: #ffffff;
+    --head-color: #e3e3e3;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100dvh;
+    position: relative;
+}
+
+
+
+/* start header */
+header {
+    background: linear-gradient(90deg, rgba(112, 90, 235, 0.45) -0.53%, rgba(89, 72, 187, 0.66) -0.52%, rgba(87, 70, 182, 0.69) 4.99%, rgba(81, 65, 169, 0.74) 21.05%, rgba(18, 8, 72, 0.81) 37.11%, rgba(63, 51, 133, 0.90) 54.17%, rgba(66, 53, 139, 0.87) 60.7%, rgba(74, 59, 154, 0.81) 78.77%, rgba(67, 54, 140, 0.87) 90.3%, rgba(68, 55, 143, 0.86) 90.31%);
+    height: 121px;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    padding: 0 15px;
+}
+
+
+.container .icon {
+    width: 287px;
+    height: 201px;
+}
+
+.container .icon img {
+    width: 100%
+}
+
+.container .links {
+    position: relative;
+    bottom: 2rem;
+    color: #FFF;
+    font-family: "DM Sans";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 70.187%;
+}
+
+.container .links a {
+    color: var(--link-color);
+    font-size: 2rem;
+    margin-left: 3rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .3s;
+    color: var(--link-color);
+}
+
+.container .links a:hover {
+    color: var(--main-color);
+}
+
+.container .links a.lighted {
+    color: var(--main-color);
+}
+
+
+.container .log-but {
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    bottom: 2rem;
+    color: #FFF;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.container .log-but a {
+    text-decoration: none;
+    font-size: 16px;
+    padding: 11px 26.25px 11px 27.75px;
+    background-color: var(--main-color);
+    color: var(--link-color);
+    width: 117px;
+    height: 42px;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+.container .log-but a:hover {
+    background-color: #fff;
+    color: #705AEB;
+}
+
+/* end header */
+/* start main  */
+main {
+    min-height: 80dvh;
+}
+
+main .container {
+    display: flex;
+    margin-top: -16px;
+    justify-content: space-between;
+}
+
+main .container .left-side {
+    flex-basis: 35%;
+    overflow-x: hidden;
+    height: 90dvh;
+    padding: 2rem;
+    line-height: 1.5px;
+
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 10px;
+    opacity: .5;
+}
+
+main .container .left-side form label {
+    color: #705AEB;
+    font-family: "Archivo Black";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: block;
+    margin-bottom: .5rem;
+}
+
+main .container .left-side form input {
+    width: 457px;
+    height: 35px;
+    padding-left: 1rem;
+    outline: none;
+    stroke-width: 1px;
+    stroke: #FFF;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+main .container .left-side form input::placeholder {
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+main .container .left-side form .btn { 
+    display: flex;
+    width: 250px;
+    height: 94px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #705AEB;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    transition: .3s;
+    cursor: pointer;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    border: none;
+    position: absolute;
+    top: 56%;
+    left: 60%;
+    z-index: 2;
+}
+main .container .left-side form .btn:hover { 
+    background-color: #705AEB;
+    color: #FFF;
+}
+
+
+main .container .right-side {
+    flex-basis: 64%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../static/premium_photo-1661779425660-33e91cce9dd4.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main .container .right-side::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+main .container .right-side button:hover {
+    background-color: #705AEB;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* end main  */
+        </style>
+</head>
+
+<body>
+    <!-- start header -->
+    <header>
+        <div class="container">
+            <div class="icon">
+                <!-- <img src="img/photo_2024-03-02_13-40-49-removebg-preview (1) 1.png" alt=""> -->
+                <img src="{{url_for('static', filename='photo_2024-03-02_13-40-49-removebg-preview (1) 1.png')}}" alt="">
+            </div>
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#" class="lighted">services </a>
+                <a href="#">profile</a>
+                <a href="#">search</a>
+            </div>
+            <div class="log-but">
+                <a href="#">Log in</a>
+                <a href='#'>sign up</a>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+    <!-- start main -->
+    <main>
+        <div class="container">
+            <div class="left-side">
+                <form action="{{ url_for('predict')}}" method="POST">
+                    
+                    <label for="age">Age</label><br>
+                    <input type="number" class="form-control" name="age" id="age" min="1" max="100" placeholder="(1, 100)" step="any" required><br>
+        
+                    <label for="sex">Sex</label><br>
+                    <input type="number" class="form-control" name="sex" id="sex" min="0" max="1" placeholder="Male - 1, Female - 0" required><br>
+                    
+                    <label for="on_thyroxine">On Thyroxine</label><br>
+                    <input type="number" class="form-control" name="onthyroxine" id="on_thyroxine" min="0" max="1" placeholder="(0, 1)" required><br>
+                    
+                    <label for="query_on_thyroxine">Query On Thyroxine</label><br>
+                    <input type="number" class="form-control" name="queryonthyroxine" id="query_on_thyroxine" min="0" max="1" placeholder="(0, 1)" required><br>
+                    
+                    <label for="on_anti_thyroid_medication">On Antithyroid Medication</label><br>
+                    <input type="number" class="form-control" name="onantithyroidmedication" id="on_anti_thyroid_medication" min="0" max="1" placeholder="(0, 1)" required><br>
+                    
+                    <label for="sick">Sick</label><br>
+                    <input type="number" class="form-control" name="sick" id="sick" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+                    
+                    <label for="pregnant">Pregnant</label><br>
+                    <input type="number" class="form-control" name="pregnant" id="pregnant" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+                    
+                    <label for="thyroid_surgery">Thyroid Surgery</label><br>
+                    <input type="number" class="form-control" name="thyroidsurgery" id="thyroid_surgery" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+                    
+                    <label for="I131_treatment">I131 Treatment</label><br>
+                    <input type="number" class="form-control" name="I131treatment" id="I131_treatment" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+                    
+                    <label for="query_hypothyroid">Query Hypothyroid</label><br>
+                    <input type="number" class="form-control" name="queryhypothyroid" id="query_hypothyroid" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+        
+                    <label for="query_hyperthyroid">Query Hyperthyroid</label><br>
+                    <input type="number" class="form-control" name="queryhyperthyroid" id="query_hyperthyroid" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+                    
+                    <label for="lithium">Lithium</label><br>
+                    <input type="number" class="form-control" name="lithium" id="lithium" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+        
+                    <label for="goitre">Goitre</label><br>
+                    <input type="number" class="form-control" name="goitre" id="goitre" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+        
+                    <label for="tumor">Tumor</label><br>
+                    <input type="number" class="form-control" name="tumor" id="tumor" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+        
+                    <label for="hypopituitary">Hypopituitary</label><br>
+                    <input type="number" class="form-control" name="hypopituitary" id="hypopituitary" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+        
+                    <label for="psych">Psychological Symptoms</label><br>
+                    <input type="number" class="form-control" name="psych" id="psych" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+                    
+                     <label for="TSH-MEASURED">TSH measured</label> 
+                     <input type="number" name="TSH measured" class="form-control" id="TSH-MEASURED" min="0" max="1" placeholder="Yes - 1, No - 0" required><br> 
+        
+                    <label for="tsh" >Thyroid Stimulating Hormone Level</label><br>
+                    <input type="number" class="form-control" name="TSH" id="tsh" min="0.005" max="478.0" placeholder="(0.005, 478.0)" step="any" required ><br>
+                    
+                    <label for="T3 measured">T3 measured</label> 
+                    <input type="number" name="T3 measured" class="form-control" id="T3 measured" min="0" max="1" placeholder="Yes - 1, No - 0" required><br> 
+                    
+                    <label for="t3">T3 Level</label><br>
+                    <input type="number" class="form-control" name="T3" id="t3" min="0.05" max="10.6" placeholder="(0.05, 10.6)" step="any" required><br>
+        
+                     <label for="TT4 measured">TT4 measured</label>
+                    <input type="number" class="form-control" name="TT4 measured" id="TT4 measured" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>             
+        
+                    <label for="TT4 level">TT4 level</label>
+                    <input type="number" class="form-control" name="TT4 level" id="TT4 level" min="2.0" max="430.0" placeholder="(2.0 , 430.0)" step="any" required ><br>
+                    
+                     <label for="T4U measured">T4U measured</label>
+                    <input type="number" class="form-control" name="T4U measured" id="T4U measured" min="0" max="1" placeholder="Yes - 1, No - 0" required><br> 
+        
+                     <label for="t4u">T4U Level</label><br>
+                    <input type="number" class="form-control" name="T4U" id="t4u" min="0.31" max="2.12" placeholder="(0.31, 2.12)" step="any" required><br> 
+                    
+                     <label for="FTI measured">FTI measured</label>
+                    <input type="number" class="form-control" name="FTI measured" id="FTI measured" min="0" max="1" placeholder="Yes - 1, No - 0" required ><br> 
+                    
+                    <label for="fti">Free Thyroxine Index (FTI)</label><br>
+                    <input type="number" class="form-control" name="FTI" id="fti" min="2.0" max="395.0" placeholder="(2.0, 395.0)" step="any" required><br>
+        
+                     <label for="TBG measured">TBG measured</label>
+                    <input type="number" class="form-control" name="TBG measured" id="TBG measured" min="0" max="1" placeholder="Yes - 1, No - 0" required ><br>
+        
+
+                    <!-- <input type="submit" class="btn" value="Predict"> -->
+                     <button type="submit" class="btn">predict</button>
+ 
+                
+                </form>
+            </div>
+
+            <div class="right-side">
+            </div>
+        </div>
+    </main>
+    <!-- end main -->
+
+</body>

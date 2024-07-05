@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/all.min.css') }}">
+    <style>
+        /* start global  */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #eee;
+        }
+
+        .container {
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        @media (min-width:767px) {
+            .container {
+                width: 750px;
+            }
+        }
+
+        @media (min-width:576px) {
+            .container {
+                width: 540px;
+            }
+
+        }
+
+        /* end global  */
+
+        /* start form */
+        .label {
+            display: inline-block;
+            text-align: left;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #0d6efd;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: 0.25rem;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            /* margin-left: 200px; */
+            line-height: 1.5;
+            color: #212529;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            border-radius: 0.25rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
+
+        .btn-lg {
+
+            padding: 0.5rem 1rem;
+            font-size: 1.25rem;
+            border-radius: 0.3rem;
+        }
+
+        /* end form */
+    </style>
+    <title>Thyroid Detection - Homepage</title>
+</head>
+
+<body>
+    <div class="form" >
+        <div class="container">
+            <form class="form" action="{{ url_for('predict')}}" method="POST">
+
+                <!-- <label for="age">Age</label><br>
+                <input type="number" class="form-control" name="age" id="age" min="1" max="100" placeholder="(1, 100)"
+                    step="any" required><br> -->
+                    <label for="const">const</label>
+            <input type="number" class="form-control" name="const" id="const" min="0" max="3772">
+                    <label for="age">Age</label><br>
+                <input type="number" class="form-control" name="age" id="age" min="1" max="100" placeholder="(1, 100)" step="any" required><br>
+
+            <label for="sex">Sex</label><br>
+            <input type="number" class="form-control" name="sex" id="sex" min="0" max="1" placeholder="Male - 1, Female - 0" required><br>
+            
+            <label for="on_thyroxine">On Thyroxine</label><br>
+            <input type="number" class="form-control" name="onthyroxine" id="on_thyroxine" min="0" max="1" placeholder="(0, 1)" required><br>
+            
+            <label for="query_on_thyroxine">Query On Thyroxine</label><br>
+            <input type="number" class="form-control" name="queryonthyroxine" id="query_on_thyroxine" min="0" max="1" placeholder="(0, 1)" required><br>
+            
+            <label for="on_anti_thyroid_medication">On Antithyroid Medication</label><br>
+            <input type="number" class="form-control" name="onantithyroidmedication" id="on_anti_thyroid_medication" min="0" max="1" placeholder="(0, 1)" required><br>
+            
+            <label for="sick">Sick</label><br>
+            <input type="number" class="form-control" name="sick" id="sick" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+            
+            <label for="pregnant">Pregnant</label><br>
+            <input type="number" class="form-control" name="pregnant" id="pregnant" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+            
+            <label for="thyroid_surgery">Thyroid Surgery</label><br>
+            <input type="number" class="form-control" name="thyroidsurgery" id="thyroid_surgery" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+            
+            <label for="I131_treatment">I131 Treatment</label><br>
+            <input type="number" class="form-control" name="I131treatment" id="I131_treatment" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+            
+            <label for="query_hypothyroid">Query Hypothyroid</label><br>
+            <input type="number" class="form-control" name="queryhypothyroid" id="query_hypothyroid" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+
+            <label for="query_hyperthyroid">Query Hyperthyroid</label><br>
+            <input type="number" class="form-control" name="queryhyperthyroid" id="query_hyperthyroid" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+            
+            <label for="lithium">Lithium</label><br>
+            <input type="number" class="form-control" name="lithium" id="lithium" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+
+            <label for="goitre">Goitre</label><br>
+            <input type="number" class="form-control" name="goitre" id="goitre" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+
+            <label for="tumor">Tumor</label><br>
+            <input type="number" class="form-control" name="tumor" id="tumor" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+
+            <label for="hypopituitary">Hypopituitary</label><br>
+            <input type="number" class="form-control" name="hypopituitary" id="hypopituitary" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+
+            <label for="psych">Psychological Symptoms</label><br>
+            <input type="number" class="form-control" name="psych" id="psych" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+            
+             <label for="TSH-MEASURED">TSH measured</label> 
+             <input type="number" name="TSH measured" class="form-control" id="TSH-MEASURED" min="0" max="1" placeholder="Yes - 1, No - 0" required><br> 
+
+            <label for="tsh" >Thyroid Stimulating Hormone Level</label><br>
+            <input type="number" class="form-control" name="TSH" id="tsh" min="0.005" max="478.0" placeholder="(0.005, 478.0)" step="any" required ><br>
+            
+            <label for="T3 measured">T3 measured</label> 
+            <input type="number" name="T3 measured" class="form-control" id="T3 measured" min="0" max="1" placeholder="Yes - 1, No - 0" required><br> 
+            
+            <label for="t3">T3 Level</label><br>
+            <input type="number" class="form-control" name="T3" id="t3" min="0.05" max="10.6" placeholder="(0.05, 10.6)" step="any" required><br>
+
+             <label for="TT4 measured">TT4 measured</label>
+            <input type="number" class="form-control" name="TT4 measured" id="TT4 measured" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>             
+
+            <label for="TT4 level">TT4 level</label>
+            <input type="number" class="form-control" name="TT4 level" id="TT4 level" min="2.0" max="430.0" placeholder="(2.0 , 430.0)" step="any" required ><br>
+            
+             <label for="T4U measured">T4U measured</label>
+            <input type="number" class="form-control" name="T4U measured" id="T4U measured" min="0" max="1" placeholder="Yes - 1, No - 0" required><br> 
+
+             <label for="t4u">T4U Level</label><br>
+            <input type="number" class="form-control" name="T4U" id="t4u" min="0.31" max="2.12" placeholder="(0.31, 2.12)" step="any" required><br> 
+            
+             <label for="FTI measured">FTI measured</label>
+            <input type="number" class="form-control" name="FTI measured" id="FTI measured" min="0" max="1" placeholder="Yes - 1, No - 0" required ><br> 
+            
+            <label for="fti">Free Thyroxine Index (FTI)</label><br>
+            <input type="number" class="form-control" name="FTI" id="fti" min="2.0" max="395.0" placeholder="(2.0, 395.0)" step="any" required><br>
+
+             <label for="TBG measured">TBG measured</label>
+            <input type="number" class="form-control" name="TBG measured" id="TBG measured" min="0" max="1" placeholder="Yes - 1, No - 0" required ><br>
+
+
+            
+            <input type="submit" class="btn btn-primary btn-block btn-lg" value="Predict"><br>
+            </form>
+            <br>
+            
+            <div class="result">
+                <h3>: {{ prediction_text }} </h3>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
